@@ -1,0 +1,390 @@
+/* 
+    Document   : common
+    Created on : May 6, 2013, 6:16:03 PM
+    Author     : Jeffrey
+    Description: Styles across the board
+*/
+
+@font-face 
+{
+    /* use fontFamily instead of font-family */
+	src: url('CAMBRIA.TTC');
+	fontFamily: "Cambria";
+}
+.clear {
+    clear:  both;
+}
+body {
+    color:              #000000;
+    font-size:          62.5%;
+    font-family:        "Cambria","Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    background-color:   #CCCCCC;
+}
+p {
+    display:        block;
+    line-height:    1em;
+    font-size:      1em;
+    padding-bottom: 1em;
+}
+h1, h2, h3, h4, h5, h6 {
+    display:        block;
+    font-weight:    bold;
+    padding-bottom: 1em;
+}
+h4, p, td, th, li, label {
+    font-size:      1.25em;
+    line-height:    1.25em;
+}
+h3, legend {
+    font-size:      1.50em;
+    line-height:    1.50em;
+}
+h2 {
+    font-size:      1.75em;
+    line-height:    1.75em;
+}
+
+/*
+    Header/Footer rethink [http://jsfiddle.net/virendrachandak/cF2Fv/]
+*/
+
+header, footer {
+    position: fixed;
+    width: 100%
+}
+
+/* Make Header Sticky */
+header {
+    background-color:   #CCCCFF;
+    border-bottom:      1px solid #C0C0C0;
+    height:             10em;
+    left:               0;
+    top:                0;
+}
+header section {
+    margin:             0 auto;
+    width:              960px;
+    /*
+    text-align:center;
+    */
+}
+header section h1 {
+    font-family:    arial, sans-serif;
+    font-size:      4.50em;
+    line-height:    60px;
+    text-shadow:    2px 2px 2px #000033;
+    filter:         dropshadow(color=#000033, offx=2, offy=2);
+    display:        inline-block;
+    padding-bottom: 4px;
+}
+header section h1 #title1 {
+    font-weight:    normal;
+    color:          #0000FF;
+}
+header section h1 #title2 {
+    font-weight:    bold;
+    color:          #3333CC;
+}
+header section h2 {
+    display:        inline;
+    float:          right;
+    padding:        auto 0px;
+    color:          #000033;
+    text-align:     right;
+}
+
+#page {
+    width:                  960px;
+    margin:                 12em auto 8em;
+    background-color:       #FFFFFF;
+    overflow:               auto;
+    -webkit-box-shadow:     4px 4px 4px 4px #000000;
+    box-shadow:             4px 4px 4px 4px #000000;
+}
+
+/* Make Footer Sticky */
+footer {
+    background-color:   #000033;
+    border-top:         1px solid #C0C0C0;
+    bottom:             0;
+    height:             6em;
+    left:               0;
+}
+footer section {
+    color:      #FFFFFF;
+    line-height:    60px;
+    margin:     0 auto;
+    width:      940px;
+    text-align: center;
+}
+
+
+fieldset {
+    border: 1px dotted silver;
+    padding: 2px;
+}
+legend, th {
+    font-weight: bold;
+    font-style: italic;
+    border: solid 1px white;
+}
+legend {
+    padding:6px;
+    background-color: #CCFFFF;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;     
+}
+tr {
+    border-bottom: dotted 1px silver;
+}
+td, th {
+    padding: 2px;
+}
+th a {
+    padding: 2px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #F5F5F5;
+}
+nav {
+    font-weight: bold;
+    /*
+    background-color: #666699;
+    padding:0.1em;
+    */
+}
+
+th {
+    background-color: #003333;
+    color: #00FFFF;    
+}
+th:hover {
+    background-color: #CCFFFF;
+    color: #003333; 
+}
+
+header nav ul, .filter_list
+{
+    list-style-type:none;
+    /*
+    margin:1em;
+    background-color: yellow;
+    */
+}
+header nav ul li, .filter_list li
+{
+    display:inline;
+    margin-right: 4px;
+}
+header nav ul li a, legend a
+{
+    text-decoration: none;
+    color: #00FFFF;
+    padding:6px;
+    /*
+    border:1px dotted silver;
+    background-color: #333366;
+    */
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    -webkit-box-shadow: 2px 2px 2px 2px #000033;
+    box-shadow: 2px 2px 2px 2px #000033;
+    
+    background: #a7cfdf; /* Old browsers */
+    background: -moz-linear-gradient(top,  #a7cfdf 0%, #23538a 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7cfdf), color-stop(100%,#23538a)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #a7cfdf 0%,#23538a 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #a7cfdf 0%,#23538a 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #a7cfdf 0%,#23538a 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #a7cfdf 0%,#23538a 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', endColorstr='#23538a',GradientType=0 ); /* IE6-9 */
+
+}
+legend a
+{
+    font-size: smaller;
+    margin-right: 4px;
+}
+header nav ul li a:hover, legend a:hover
+{
+    color: #000033;
+    /*
+    border:1px dotted silver;
+    background-color: #9999CC;
+    */
+    background: #deefff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #deefff 0%, #98bede 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#deefff), color-stop(100%,#98bede)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #deefff 0%,#98bede 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #deefff 0%,#98bede 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #deefff 0%,#98bede 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #deefff 0%,#98bede 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#deefff', endColorstr='#98bede',GradientType=0 ); /* IE6-9 */
+
+}
+.filter
+{
+    display: block;
+    width: 100%;
+}
+.filter label
+{
+    width: 100px;
+}
+.filter_list
+{
+    float: right;
+    font-weight: bold;
+}
+
+
+
+section {
+    display: block;
+    width: 960px;
+    margin: 0 auto;
+}
+aside {
+    display: block;
+    width: 240px; 
+    float: left;
+    background-color: #666666;
+    color: #FFFFFF;
+}
+article {
+    display: block;
+    width: 720px;
+    float: left;
+    background-color: #F5F5F5;
+}
+
+label {
+    width: 360px;
+    display: block;
+    float: left;
+    border-bottom: 1px dotted silver;
+    background-color: #CCCCCC;
+    font-weight: bold;
+}
+input, select {
+    font-family: "Cambria","Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    font-weight: bold;
+}
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
+.button_row {
+    text-align: right;
+}
+.form_row, .button_row {
+    display: block;
+    clear: both;
+    padding: 4px;
+}
+.td_detail {
+    border-left: dashed 1px silver;
+}
+.td_dud {
+    font-weight:bold;
+}
+.td_dud a {
+    text-decoration: none;
+}
+.asterisk {
+    font-weight:    bold;
+    color:          red;
+}
+
+tbody tr th {
+    
+}
+
+.left {
+    width:  355px;
+    float:  left;
+}
+.right {
+    width:  355px;
+    float:  right;
+}
+
+.rbl {
+    float:              left;
+    font-weight:        bold;
+    padding-right:      1em;
+    /* background-color:   yellow; */
+}
+
+/*
+    Status Classes
+*/
+
+.status_error, .status_quo {
+    /* css3 */
+    -webkit-border-radius: 50px;
+    border-radius: 50px;  
+}
+
+.status_error {
+    background-color: crimson;
+    color: #FFFFFF;
+    -webkit-box-shadow:  2px 2px 2px 2px #cccccc;
+    box-shadow:  2px 2px 2px 2px #cccccc;  
+}
+.status_quo {
+    background-color: powderblue;
+    color: #000000;
+}
+
+/*
+    jQuery Validation
+*/
+label.error {
+    float: none;
+    color: white;
+    padding: 2px .5em;
+    vertical-align: top;
+    font-weight: bold;
+    background-color: crimson;
+    margin: 0 4px;
+    width: 75%;
+    /* css3 */
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-box-shadow:  2px 2px 2px 2px #cccccc;
+    box-shadow:  2px 2px 2px 2px #cccccc;
+}
+
+
+/*
+    Notes on NOTES: 
+    A div containing notes for "unfinished" areas of pages,
+    intended as a temporay display to be deleted later
+    -- hence 'comic sans' and 'post-it' color scheme,
+    in contrast to the rest of the page.
+    A semi-subtle public TODO announcement. ;)
+*/
+.notes {
+
+    font-family: 'comic sans ms';
+    background-color: #FFFFCC;
+    border-left: 1pt dotted red;
+    padding: 1em;
+    color: #000000;
+}
+.notes h3 {
+    color: purple;
+}
+.notes p {
+    font-style: italic;
+}
+
+pre {
+    font-family: 'lucida console',monospace;
+    display: block;
+    border: 1px dashed silver;
+    background-color: #FFFFFF;
+}

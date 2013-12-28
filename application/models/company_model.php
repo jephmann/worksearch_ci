@@ -1,8 +1,20 @@
 <?php
     class Company_model extends CI_Model {
+        
+        private $primary_key    = 'id';
+        private $table          = 'companies';
+        
         public function __construct()
         {
             $this->load->database();
+        }
+        
+        public function select_all()
+        {
+            // display all companies on company/index
+            // TODO: Limit to id_user
+            $query = $this->db->get($this->table);
+            return $query;
         }
         
         public function create()

@@ -1,8 +1,20 @@
 <?php
     class Log_model extends CI_Model {
+        
+        private $primary_key    = 'id';
+        private $table          = 'logs';
+        
         public function __construct()
         {
             $this->load->database();
+        }
+        
+        public function select_all()
+        {
+            // display all logs on log/index
+            // TODO: Limit to id_user
+            $query = $this->db->get($this->table);
+            return $query;
         }
         
         public function create()

@@ -8,9 +8,18 @@
                 <h2><?php echo ($topic.' > '.$subtopic); ?> | <?php echo ($loginout.$session_whose); ?></h2>
                 <nav>
                     <ul>
-                        <?php
-                            echo $nav_li;
-                        ?>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/company">Companies</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/contact">Contacts</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/log">Logs</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/profile">Profile</a>
+                        </li>
                     </ul>
                 </nav>
             </section>

@@ -1,17 +1,22 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Company extends CI_Controller {        
+class Company extends CI_Controller {
+    
+    var $topic = 'Companies';
     
     public function index()
     {
         $this->load->model('Company_model');
         $this->load->helper('url');
+        $this->load->library('table');
 
-        $data['topic']      = 'Company';
+        $data['topic']      = $this->topic;
         $data['subtopic']   = 'Select';
-        $data['nav_li']     = '<li>Navigation To Be Determined</li>';
         $data['loginout']   = 'to-do';
         $data['session_whose'] = 'too-doo';
+        
+        $companies          = $this->Company_model->select_all();        
+        $data['table']      = $this->table->generate($companies);
 
         $this->load->view('templates/head', $data);
         $this->load->view('templates/header', $data);
@@ -26,9 +31,8 @@ class Company extends CI_Controller {
         $this->load->model('Company_model');
         $this->load->helper('url');
 
-        $data['topic']      = 'Company';
+        $data['topic']      = $this->topic;
         $data['subtopic']   = 'Create';
-        $data['nav_li']     = '<li>Navigation To Be Determined</li>';
         $data['loginout']   = 'to-do';
         $data['session_whose'] = 'too-doo';
 
@@ -45,9 +49,8 @@ class Company extends CI_Controller {
         $this->load->model('Company_model');
         $this->load->helper('url');
 
-        $data['topic']      = 'Company';
+        $data['topic']      = $this->topic;
         $data['subtopic']   = 'Detail';
-        $data['nav_li']     = '<li>Navigation To Be Determined</li>';
         $data['loginout']   = 'to-do';
         $data['session_whose'] = 'too-doo';
 
@@ -64,9 +67,8 @@ class Company extends CI_Controller {
         $this->load->model('Company_model');
         $this->load->helper('url');
 
-        $data['topic']      = 'Company';
+        $data['topic']      = $this->topic;
         $data['subtopic']   = 'Update';
-        $data['nav_li']     = '<li>Navigation To Be Determined</li>';
         $data['loginout']   = 'to-do';
         $data['session_whose'] = 'too-doo';
 
@@ -83,9 +85,8 @@ class Company extends CI_Controller {
         $this->load->model('Company_model');
         $this->load->helper('url');
 
-        $data['topic']      = 'Company';
+        $data['topic']      = $this->topic;
         $data['subtopic']   = 'Delete';
-        $data['nav_li']     = '<li>Navigation To Be Determined</li>';
         $data['loginout']   = 'to-do';
         $data['session_whose'] = 'too-doo';
 

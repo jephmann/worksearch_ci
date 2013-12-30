@@ -9,16 +9,16 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/company">Companies</a>
+                            <a href="<?php echo base_url(); ?>company">Companies</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/contact">Contacts</a>
+                            <a href="<?php echo base_url(); ?>contact">Contacts</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/log">Logs</a>
+                            <a href="<?php echo base_url(); ?>log">Logs</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/profile">Profile</a>
+                            <a href="<?php echo base_url(); ?>profile">Profile</a>
                         </li>
                     </ul>
                 </nav>

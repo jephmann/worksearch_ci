@@ -4,3 +4,6 @@
 <h3>
     Profile Data
 </h3>
+<h3>
+    <?php echo ($profile_name); ?>
+</h3>

@@ -19,14 +19,22 @@
             return $query;
         }
         
+        public function detail($id_user)
+        {
+            if($id_user != FALSE)
+            {
+                $query = $this->db->get_where($this->table, array('id_user' => $id_user));
+                return $query->row_array();
+            }
+            else
+            {
+                return FALSE;
+            }
+        }
+        
         public function create()
         {
            // insert a single profile 
-        }
-        
-        public function read()
-        {
-            // select a single profile            
         }
         
         public function update()

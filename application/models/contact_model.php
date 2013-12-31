@@ -17,14 +17,35 @@
             return $query;
         }
         
+        public function detail($id)
+        {
+            if($id != FALSE)
+            {
+                $query = $this->db->get_where($this->table, array('id' => $id));
+                return $query->row_array();
+            }
+            else
+            {
+                return FALSE;
+            }
+        }
+        
+        public function cocontacts($id, $id_company)
+        {
+            if($id_company != FALSE)
+            {
+                $query = $this->db->get_where($this->table, array('id_company' => $id_company, 'id' => $id));
+                return $query;
+            }
+            else
+            {
+                return FALSE;
+            }
+        }
+        
         public function create()
         {
            // insert a single contact 
-        }
-        
-        public function read()
-        {
-            // select a single contact            
         }
         
         public function update()

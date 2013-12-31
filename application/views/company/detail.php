@@ -1,12 +1,8 @@
 <h2>
     Company Detail
 </h2>
-<h3>
-    Company Data
-</h3>
-<h3>
-    Company Contacts
-</h3>
-<h3>
-    Company Logs
-</h3>
+<nav>
+    <ul>
+        <li><a href="<?php echo base_url('company/create'); ?>">Create</a></li>
+    </ul>
+</nav>

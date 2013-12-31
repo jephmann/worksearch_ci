@@ -3,10 +3,11 @@
 class Profile extends CI_Controller {
     
     var $topic = 'Profile';
+    var $model = 'Profile_model';
     
     public function index()
     {
-        $this->load->model('Profile_model');
+        $this->load->model($this->model);
         $this->load->helper('url');
         $this->load->library('table');
 
@@ -28,7 +29,7 @@ class Profile extends CI_Controller {
         
     public function create()
     {
-        $this->load->model('Profile_model');
+        $this->load->model($this->model);
         $this->load->helper('url');
 
         $data['topic']      = $this->topic;
@@ -44,16 +45,20 @@ class Profile extends CI_Controller {
         $this->load->view('templates/foot', $data);
     }
         
-    public function detail()
+    public function detail($id_user)
     {
-        $this->load->model('Profile_model');
+        $this->load->model($this->model);
         $this->load->helper('url');
 
         $data['topic']      = $this->topic;
         $data['subtopic']   = 'Detail';
         $data['loginout']   = 'to-do';
         $data['session_whose'] = 'too-doo';
-
+        
+        $detail = $this->Profile_model->detail($id_user);
+        $data['profile_name'] = $detail['name_first'] . ' ' . $detail['name_last'];
+        // TODO: keep going
+        
         $this->load->view('templates/head', $data);
         $this->load->view('templates/header', $data);
         $this->load->view('templates/aside', $data);
@@ -64,7 +69,7 @@ class Profile extends CI_Controller {
         
     public function update()
     {
-        $this->load->model('Profile_model');
+        $this->load->model($this->model);
         $this->load->helper('url');
 
         $data['topic']      = $this->topic;
@@ -82,7 +87,7 @@ class Profile extends CI_Controller {
         
     public function delete()
     {
-        $this->load->model('Profile_model');
+        $this->load->model($this->model);
         $this->load->helper('url');
 
         $data['topic']      = $this->topic;

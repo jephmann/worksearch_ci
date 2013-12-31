@@ -1,6 +1,8 @@
 <h2>
     Log Detail
 </h2>
-<h3>
-    Log Data
-</h3>
+<nav>
+    <ul>
+        <li><a href="<?php echo base_url('log/create'); ?>">Create</a></li>
+    </ul>
+</nav>

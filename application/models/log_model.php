@@ -17,14 +17,22 @@
             return $query;
         }
         
+        public function detail($id)
+        {
+            if($id != FALSE)
+            {
+                $query = $this->db->get_where($this->table, array('id' => $id));
+                return $query->row_array();
+            }
+            else
+            {
+                return FALSE;
+            }
+        }
+        
         public function create()
         {
            // insert a single log 
-        }
-        
-        public function read()
-        {
-            // select a single log            
         }
         
         public function company_logs()

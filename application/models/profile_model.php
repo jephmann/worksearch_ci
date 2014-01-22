@@ -45,5 +45,7 @@
         public function delete()
         {
             // delete a single profile
+            $query = $this->db->delete($this->table, array('id' => $id));
+            return $query;
         }
     }

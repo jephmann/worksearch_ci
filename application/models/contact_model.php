@@ -56,5 +56,7 @@
         public function delete()
         {
             // delete a single contact
+            $query = $this->db->delete($this->table, array('id' => $id));
+            return $query;
         }
     }

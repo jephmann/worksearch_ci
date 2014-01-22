@@ -53,5 +53,7 @@
         public function delete()
         {
             // delete a single company
+            $query = $this->db->delete($this->table, array('id' => $id));
+            return $query;
         }
     }

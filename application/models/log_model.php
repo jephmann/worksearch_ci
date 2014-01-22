@@ -50,8 +50,10 @@
             // update a single log            
         }
         
-        public function delete()
+        public function delete($id)
         {
             // delete a single log
+            $query = $this->db->delete($this->table, array('id' => $id));
+            return $query;
         }
     }

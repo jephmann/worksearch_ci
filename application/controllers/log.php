@@ -221,18 +221,36 @@ class Log extends CI_Controller {
     {
         $this->load->model($this->model);
         $this->load->helper('url');
-
-        $data['topic']      = $this->topic;
-        $data['subtopic']   = 'Delete';
-        $data['loginout']   = 'to-do';
-        $data['session_whose'] = 'too-doo';
-
-        $this->load->view('templates/head', $data);
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/aside', $data);
-        $this->load->view('log/delete', $data);
-        $this->load->view('templates/footer', $data);
-        $this->load->view('templates/foot', $data);
+        $this->load->helper('form');
+        
+        $data['log_id']         = $this->uri->segment(3);
+        $data['topic']          = $this->topic;
+        $data['subtopic']       = 'Delete';
+        $data['loginout']       = 'to-do';
+        $data['session_whose']  = 'too-doo';        
+        
+        if ($this->input->post('delete_no'))
+        {
+            // RETURN TO THE DETAIL PAGE
+            redirect("log/detail/{$data['log_id']}");
+        }
+        elseif ($this->input->post('delete_yes'))
+        {
+            // DELETE THE RECORD; RETURN TO INDEX
+            $this->Log_model->delete($data['log_id']);
+            redirect("log/");
+        }
+        else
+        {
+            // LOAD THE DELETE PAGE
+            // TODO: Consolidate Delete View
+            $this->load->view('templates/head', $data);
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/aside', $data);
+            $this->load->view('log/delete', $data);
+            $this->load->view('templates/footer', $data);
+            $this->load->view('templates/foot', $data);          
+        } 
     }
 }
 /* End of file log.php */

@@ -85,22 +85,41 @@ class Profile extends CI_Controller {
         $this->load->view('templates/foot', $data);
     }
         
-    public function delete()
+    public function delete($id)
     {
         $this->load->model($this->model);
         $this->load->helper('url');
-
-        $data['topic']      = $this->topic;
-        $data['subtopic']   = 'Delete';
-        $data['loginout']   = 'to-do';
-        $data['session_whose'] = 'too-doo';
-
-        $this->load->view('templates/head', $data);
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/aside', $data);
-        $this->load->view('profile/delete', $data);
-        $this->load->view('templates/footer', $data);
-        $this->load->view('templates/foot', $data);
+        $this->load->helper('form');
+        
+        $data['profile_id']     = $this->uri->segment(3);
+        $data['topic']          = $this->topic;
+        $data['subtopic']       = 'Delete';
+        $data['loginout']       = 'to-do';
+        $data['session_whose']  = 'too-doo';        
+        
+        // TODO: Rethink Flow re Profile
+        if ($this->input->post('delete_no'))
+        {
+            // RETURN TO THE DETAIL PAGE
+            redirect("profile/detail/{$data['profile_id']}");
+        }
+        elseif ($this->input->post('delete_yes'))
+        {
+            // DELETE THE RECORD; RETURN TO INDEX
+            $this->Log_model->delete($data['profile_id']);
+            redirect("profile/");
+        }
+        else
+        {
+            // LOAD THE DELETE PAGE
+            // TODO: Consolidate Delete View
+            $this->load->view('templates/head', $data);
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/aside', $data);
+            $this->load->view('profile/delete', $data);
+            $this->load->view('templates/footer', $data);
+            $this->load->view('templates/foot', $data);          
+        } 
     }
 }
 /* End of file profile.php */

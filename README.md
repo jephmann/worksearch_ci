@@ -55,3 +55,14 @@ tutorials in a bid to revive my dormant ASP.NET skills.
 the first projects wherein I would connect to GitHub via NetBeans. Yesterday I
 downloaded and installed NetBeans 8.0. The posting of this updated README.md
 file is a test to ensure that my GitHub settings are still intact.
+
+DATABASE UPDATE 2014.04.08
+
+Whereas both "worksearch_ci" (this project) and "worksearch" share the same
+MySQL database, any changes to the database would affect both projects. And so
+it has with the past weekend's database changes:
+- adding a "contents" table for navigation.
+- renaming the "companies" table as "prospects"; adding a field called "branch".
+
+My current concentration is on "worksearch". I have yet to make appropriate
+changes to "worksearch_ci" to accommodate these changes.
